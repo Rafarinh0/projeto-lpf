@@ -3,12 +3,12 @@ if (typeof kotlin === 'undefined') {
 }var main = function (_, Kotlin) {
   'use strict';
   var println = Kotlin.kotlin.io.println_s8jyv4$;
-  function main(args) {
+  function main() {
     for (var c = 1; c <= 10; c++)
       println('Diversao!!!');
   }
-  _.main_kand9s$ = main;
-  main([]);
+  _.main = main;
+  main();
   Kotlin.defineModule('main', _);
   return _;
 }(typeof main === 'undefined' ? {} : main, kotlin);

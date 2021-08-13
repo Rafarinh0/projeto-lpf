@@ -1,0 +1,125 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: url("360_F_266347082_qnZLppWcnm5a4OA5cGNE1amPi01lpEmV.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator{
+  display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    background: gray;
+    word-wrap: break-word;
+    word-break: break-all;
+    grid-area: 1/1/2/span 4;
+    padding: 10px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn {
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+
+}
+
+.btn:hover {
+  background:rgb(85, 85, 85);
+  color: #fff;
+  transition: 0.2s background-color;
+}
+.equal {
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  grid-area: 6/3/7/5;
+  background-color: orange;
+  color: #fff;
+
+}
+.clear-entry {
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  grid-area: 2/1/3/3;
+  background: rgb(143, 142, 142);
+}
+.clear{
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  grid-area: 2/3/3/4;
+  background: rgb(143, 142, 142);
+
+}
+.operators { 
+
+  grid-area: 2/4/6/5;
+  display: flex;
+  flex-direction: column;
+}
+
+.clear:hover{
+background: rgb(167, 167, 167);
+color: #000000;
+transition: 0.2s background-color;
+
+}
+
+.equal:hover{
+  background: rgb(253, 189, 69);
+  color: #fff;
+  transition: 0.2s background-color;
+}
+
+.clear-entry:hover{
+  background: rgb(167, 167, 167);
+  color: #000000;
+  transition: 0.2s background-color;
+
+}
+
+.operators > .btn {
+  background-color: orange;
+  flex: 1
+}
+
+.operators > .btn:hover{
+
+  background: #fff;
+  color: orange;
+  transition: 0.2s background-color;
+
+}
