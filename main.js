@@ -4,8 +4,13 @@ if (typeof kotlin === 'undefined') {
   'use strict';
   var println = Kotlin.kotlin.io.println_s8jyv4$;
   function main() {
-    for (var c = 1; c <= 10; c++)
-      println('Diversao!!!');
+    var firstoutput = document.querySelector('.first-output');
+    var secondoutput = document.querySelector('.second-output');
+    var btns = document.querySelectorAll('.btn');
+    var equal = document.querySelector('.equal');
+    var clear = document.querySelector('.clear');
+    var clearEntry = document.querySelector('.clear-entry');
+    println(btns);
   }
   _.main = main;
   main();
