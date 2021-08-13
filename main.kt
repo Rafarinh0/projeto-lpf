@@ -1,24 +1,34 @@
 import kotlinx.browser.*
 import org.w3c.dom.*  
 
-fun main(){
-  val firstoutput = document.querySelector(".first-output")
-  val secondoutput = document.querySelector(".second-output")
-  val btns = document.querySelectorAll(".btn")
-  val equal = document.querySelector(".equal")
-  val clear = document.querySelector(".clear")
-  val clearentry = document.querySelector(".clear-entry")
-    
-  for(btn in btns){
-    btn.addEventListener("click", {
-      val content = btn.getAttribute("data-num")
-      secondoutput?.textContent = content
-    })
-  }
+@JsName("insert")
+fun insert(num:String?){
+  val numero = document.getElementById("output")?.innerHTML
 
-  clearentry?.addEventListener("click", {
-    firstoutput?.textContent = ""
-    secondoutput?.textContent = ""
-  })
+  document.getElementById("output")?.innerHTML = numero + num
 }
+
+@JsName("clear")
+fun clear(){
+  document.getElementById("output")?.innerHTML = ""
+}
+
+@JsName("back")
+fun back(){
+  val output = document.getElementById("output")?.innerHTML
+  if(output!=null){
+    document.getElementById("output")?.innerHTML = output.substring(0, output.length-1)
+  }
   
+}
+
+@JsName("calculate")
+fun calculate(){
+    val result = document.getElementById("output")?.innerHTML;
+    if(result != null){
+      document.getElementById("output")?.innerHTML = eval(result);
+    }
+
+}
+
+
