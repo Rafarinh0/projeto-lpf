@@ -3,6 +3,7 @@ if (typeof kotlin === 'undefined') {
 }var main = function (_, Kotlin) {
   'use strict';
   var toString = Kotlin.toString;
+  var println = Kotlin.kotlin.io.println_s8jyv4$;
   function insert(num) {
     var tmp$, tmp$_0;
     var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
@@ -24,7 +25,12 @@ if (typeof kotlin === 'undefined') {
     var tmp$, tmp$_0;
     var result = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
     if (result != null) {
-      (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = eval(result)) : null;
+      try {
+        (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = eval(result)) : null;
+      } catch (err) {
+        clear();
+        println('Entrada invalida!');
+      }
     }}
   _.insert = insert;
   _.clear = clear;

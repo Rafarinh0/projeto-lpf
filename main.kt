@@ -24,11 +24,16 @@ fun back(){
 
 @JsName("calculate")
 fun calculate(){
-    val result = document.getElementById("output")?.innerHTML;
+    val result = document.getElementById("output")?.innerHTML
     if(result != null){
-      document.getElementById("output")?.innerHTML = eval(result);
+      try{
+        document.getElementById("output")?.innerHTML = eval(result)
+      }
+      catch(err: dynamic){
+          clear()
+          println("Entrada invalida!")
+      }
     }
 
 }
-
 
