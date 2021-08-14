@@ -71,7 +71,6 @@ body{
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
-  font-weight: 500;
   grid-area: 2/1/3/3;
   background: rgb(143, 142, 142);
 }
@@ -81,12 +80,11 @@ body{
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
-  font-weight: 500;
   grid-area: 2/3/3/4;
   background: rgb(143, 142, 142);
 
 }
-.operators { 
+#operators { 
 
   grid-area: 2/4/6/5;
   display: flex;
@@ -96,32 +94,128 @@ body{
 .clear:hover{
 background: rgb(167, 167, 167);
 color: #000000;
-transition: 0.5s background-color;
+transition: 0.2s background-color;
 
 }
 
 .equal:hover{
-  background: #fff;
-  color: orange;
-  transition: 0.5s background-color;
+  background: rgb(253, 189, 69);
+  color: #fff;
+  transition: 0.2s background-color;
 }
 
 .clear-entry:hover{
   background: rgb(167, 167, 167);
   color: #000000;
-  transition: 0.5s background-color;
+  transition: 0.2s background-color;
 
 }
 
-.operators > .btn {
+#operators > .btn {
   background-color: orange;
   flex: 1
 }
 
-.operators > .btn:hover{
+#operators > .btn:hover{
 
   background: #fff;
   color: orange;
-  transition: 0.5s background-color;
+  transition: 0.2s background-color;
+
+}
+
+#btn1 {
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+
+}
+
+#operators > #btn1 {
+  background-color: orange;
+  flex: 1
+}
+
+#operators > #btn1:hover{
+
+  background: #fff;
+  color: orange;
+  transition: 0.2s background-color;
+
+}
+
+#operators > #btn2 {
+  background-color: orange;
+  flex: 1
+}
+
+#operators > #btn2:hover{
+
+  background: #fff;
+  color: orange;
+  transition: 0.2s background-color;
+
+}
+
+#operators > #btn3 {
+  background-color: orange;
+  flex: 1
+}
+
+#operators > #btn3:hover{
+
+  background: #fff;
+  color: orange;
+  transition: 0.2s background-color;
+
+}
+
+#btn2 {
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+
+}
+
+#btn3 {
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+
+}
+
+#btn4 {
+  outline: none;
+  border: 2px solid #000000;
+  user-select: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+
+}
+
+#operators > #btn4 {
+  background-color: orange;
+  flex: 1
+}
+
+#operators > #btn4:hover{
+
+  background: #fff;
+  color: orange;
+  transition: 0.2s background-color;
 
 }
