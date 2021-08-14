@@ -11,12 +11,12 @@ fun insert(num: String?){
     document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
   }else if(numero.takeLast(2).equals("--")){
     disableMinus();
-      document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
+    document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
   } else{
     enable();
     enableMinus();
     document.getElementById("output")?.innerHTML = numero + num;
-    }
+  }
 }
 
 @JsName("calculate")
