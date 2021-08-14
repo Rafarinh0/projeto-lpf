@@ -71,6 +71,7 @@ body{
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
+  font-weight: 500;
   grid-area: 2/1/3/3;
   background: rgb(143, 142, 142);
 }
@@ -80,6 +81,7 @@ body{
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
+  font-weight: 500;
   grid-area: 2/3/3/4;
   background: rgb(143, 142, 142);
 
@@ -94,20 +96,20 @@ body{
 .clear:hover{
 background: rgb(167, 167, 167);
 color: #000000;
-transition: 0.2s background-color;
+transition: 0.5s background-color;
 
 }
 
 .equal:hover{
-  background: rgb(253, 189, 69);
-  color: #fff;
-  transition: 0.2s background-color;
+  background: #fff;
+  color: orange;
+  transition: 0.5s background-color;
 }
 
 .clear-entry:hover{
   background: rgb(167, 167, 167);
   color: #000000;
-  transition: 0.2s background-color;
+  transition: 0.5s background-color;
 
 }
 
@@ -120,6 +122,6 @@ transition: 0.2s background-color;
 
   background: #fff;
   color: orange;
-  transition: 0.2s background-color;
+  transition: 0.5s background-color;
 
 }
