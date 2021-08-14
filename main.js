@@ -12,7 +12,7 @@ if (typeof kotlin === 'undefined') {
     var tmp$, tmp$_0, tmp$_1;
     var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
     (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = numero + toString(num)) : null;
-    if (equals(takeLast(ensureNotNull(numero), 2), '//') || equals(takeLast(numero, 3), '***') || equals(takeLast(numero, 2), '++')) {
+    if (equals(takeLast(ensureNotNull(numero), 2), '//') || equals(takeLast(numero, 3), '***') || equals(takeLast(numero, 2), '++') || equals(takeLast(numero, 2), '/*') || equals(takeLast(numero, 2), '*/') || equals(takeLast(numero, 2), '+/') || equals(takeLast(numero, 2), '/+') || equals(takeLast(numero, 2), '-/')) {
       disable();
       var tmp$_2 = ensureNotNull(document.getElementById('output'));
       var endIndex = numero.length - 1 | 0;

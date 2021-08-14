@@ -6,7 +6,7 @@ fun insert(num: String?){
   val numero = document.getElementById("output")?.innerHTML;
   document.getElementById("output")?.innerHTML = numero + num;
   
-  if(numero!!.takeLast(2).equals("//") || numero.takeLast(3).equals("***") || numero.takeLast(2).equals("++")){
+  if(numero!!.takeLast(2).equals("//") || numero.takeLast(3).equals("***") || numero.takeLast(2).equals("++") || numero.takeLast(2).equals("/*") || numero.takeLast(2).equals("*/") || numero.takeLast(2).equals("+/") || numero.takeLast(2).equals("/+") || numero.takeLast(2).equals("-/")){
     disable();
     document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
   }else if(numero.takeLast(2).equals("--")){
