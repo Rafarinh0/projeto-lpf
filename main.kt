@@ -1,12 +1,16 @@
 import kotlinx.browser.*
 import org.w3c.dom.*
 
+@JsName("run")
+fun run(){
+  disable();
+}
+
 @JsName("insert")
 fun insert(num: String?){
   val numero = document.getElementById("output")?.innerHTML;
-  document.getElementById("output")?.innerHTML = numero + num;
-  
-  if(numero!!.takeLast(2).equals("//") || numero.takeLast(3).equals("***") || numero.takeLast(2).equals("++") || numero.takeLast(2).equals("/*") || numero.takeLast(2).equals("*/") || numero.takeLast(2).equals("+/") || numero.takeLast(2).equals("/+") || numero.takeLast(2).equals("-/")){
+  document.getElementById("output")?.innerHTML = numero + num;  
+  if(numero!!.takeLast(2).equals("//") || numero.takeLast(3).equals("***") || numero.takeLast(2).equals("++") || numero.takeLast(2).equals("/*") || numero.takeLast(2).equals("*/") || numero.takeLast(2).equals("+/") || numero.takeLast(2).equals("/+") || numero.takeLast(2).equals("-/") || numero.takeLast(2).equals("-+")){
     disable();
     document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
   }else if(numero.takeLast(2).equals("--")){
@@ -32,21 +36,26 @@ fun calculate(){
       println("Entrada invalida!")
     }
   }
+  run();
 }
 
 @JsName("back")
 fun back(){
   val resultado = document.getElementById("output")!!.innerHTML;
   document.getElementById("output")!!.innerHTML = resultado.substring(0, resultado.length - 1)
-  enable();
-  enableMinus();
+  if(resultado.length == 0){
+    run();
+  } else {
+    enable();
+    enableMinus();
+  }
 }
 
 @JsName("clear")
 fun clear(){
   document.getElementById("output")!!.innerHTML = "";
-  enable();
   enableMinus();
+  run();
 }
 
 fun disable(){
@@ -56,8 +65,8 @@ fun disable(){
   val btn2 = document.getElementById("btn2") as HTMLButtonElement
   btn2.disabled = true;
    
-  val btn3 = document.getElementById("btn3") as HTMLButtonElement
-  btn3.disabled = true;
+  val btn4 = document.getElementById("btn4") as HTMLButtonElement
+  btn4.disabled = true;
 
 }
 

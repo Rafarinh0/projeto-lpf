@@ -40,7 +40,7 @@ body{
 
 .btn {
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
@@ -56,7 +56,7 @@ body{
 }
 .equal {
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
@@ -67,7 +67,7 @@ body{
 }
 .clear-entry {
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
@@ -76,7 +76,7 @@ body{
 }
 .clear{
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
@@ -126,7 +126,7 @@ transition: 0.2s background-color;
 
 #btn1 {
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
@@ -176,7 +176,7 @@ transition: 0.2s background-color;
 
 #btn2 {
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
@@ -187,7 +187,7 @@ transition: 0.2s background-color;
 
 #btn3 {
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;
@@ -198,7 +198,7 @@ transition: 0.2s background-color;
 
 #btn4 {
   outline: none;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   user-select: none;
   cursor: pointer;
   font-size: 2rem;

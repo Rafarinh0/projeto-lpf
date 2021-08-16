@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/kotlin@1.5.21/kotlin.min.js"></script>
   <script src="main.js"></script>
 </head>
-<body>
+<body onload="main.run()">
   <div class="calculator">
     <div class="result">
         <p id="output"></p>
@@ -32,7 +32,7 @@
         <button id="btn3" onclick="main.insert('-')">-</button>
         <button id="btn4" onclick="main.insert('+')">+</button>
     </div>
-    <button class="clear" onclick="main.backe()">C</button>
+    <button class="clear" onclick="main.back()">C</button>
     <button class="clear-entry" onclick="main.clear()">AC</button>
     <button class="equal" onclick="main.calculate()">=</button>
 </div>
