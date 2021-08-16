@@ -11,6 +11,15 @@ if (typeof kotlin === 'undefined') {
   function run() {
     disable();
   }
+  function check() {
+    var tmp$;
+    var num = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
+    if ((num != null ? num.length : null) === 0) {
+      disable();
+    } else {
+      enable();
+    }
+  }
   function insert(num) {
     var tmp$, tmp$_0, tmp$_1;
     var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
@@ -42,24 +51,19 @@ if (typeof kotlin === 'undefined') {
         enableMinus();
         println('Entrada invalida!');
       }
-    }run();
+    }disable();
   }
   function back() {
-    var resultado = ensureNotNull(document.getElementById('output')).innerHTML;
+    var result = ensureNotNull(document.getElementById('output')).innerHTML;
     var tmp$ = ensureNotNull(document.getElementById('output'));
-    var endIndex = resultado.length - 1 | 0;
-    tmp$.innerHTML = resultado.substring(0, endIndex);
-    if (resultado.length === 0) {
-      run();
-    } else {
-      enable();
-      enableMinus();
-    }
+    var endIndex = result.length - 1 | 0;
+    tmp$.innerHTML = result.substring(0, endIndex);
+    check();
   }
   function clear() {
     ensureNotNull(document.getElementById('output')).innerHTML = '';
     enableMinus();
-    run();
+    disable();
   }
   function disable() {
     var tmp$, tmp$_0, tmp$_1;
@@ -90,6 +94,7 @@ if (typeof kotlin === 'undefined') {
     btn3.disabled = false;
   }
   _.run = run;
+  _.check = check;
   _.insert = insert;
   _.calculate = calculate;
   _.back = back;

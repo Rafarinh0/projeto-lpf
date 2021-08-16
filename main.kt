@@ -6,6 +6,15 @@ fun run(){
   disable();
 }
 
+fun check(){
+  val num = document.getElementById("output")?.innerHTML;
+  if(num?.length == 0){
+    disable();
+  } else {
+    enable();
+  }
+}
+
 @JsName("insert")
 fun insert(num: String?){
   val numero = document.getElementById("output")?.innerHTML;
@@ -36,26 +45,21 @@ fun calculate(){
       println("Entrada invalida!")
     }
   }
-  run();
+  disable();
 }
 
 @JsName("back")
 fun back(){
-  val resultado = document.getElementById("output")!!.innerHTML;
-  document.getElementById("output")!!.innerHTML = resultado.substring(0, resultado.length - 1)
-  if(resultado.length == 0){
-    run();
-  } else {
-    enable();
-    enableMinus();
-  }
+  val result = document.getElementById("output")!!.innerHTML;
+  document.getElementById("output")!!.innerHTML = result.substring(0, result.length - 1)
+  check();
 }
 
 @JsName("clear")
 fun clear(){
   document.getElementById("output")!!.innerHTML = "";
   enableMinus();
-  run();
+  disable();
 }
 
 fun disable(){
