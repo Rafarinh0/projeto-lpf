@@ -2,10 +2,10 @@ if (typeof kotlin === 'undefined') {
   throw new Error("Error loading module 'main'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'main'.");
 }var main = function (_, Kotlin) {
   'use strict';
-  var toString = Kotlin.toString;
   var ensureNotNull = Kotlin.ensureNotNull;
   var takeLast = Kotlin.kotlin.text.takeLast_6ic1pp$;
   var equals = Kotlin.equals;
+  var toString = Kotlin.toString;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
   var throwCCE = Kotlin.throwCCE;
   function run() {
@@ -20,25 +20,30 @@ if (typeof kotlin === 'undefined') {
       enable();
     }
   }
-  function insert(num) {
-    var tmp$, tmp$_0, tmp$_1;
+  function checkOp() {
+    var tmp$;
     var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
-    (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = numero + toString(num)) : null;
-    if (equals(takeLast(ensureNotNull(numero), 2), '//') || equals(takeLast(numero, 3), '***') || equals(takeLast(numero, 2), '++') || equals(takeLast(numero, 2), '/*') || equals(takeLast(numero, 2), '*/') || equals(takeLast(numero, 2), '+/') || equals(takeLast(numero, 2), '/+') || equals(takeLast(numero, 2), '-/') || equals(takeLast(numero, 2), '-+')) {
+    if (equals(takeLast(ensureNotNull(numero), 1), '/') || equals(takeLast(numero, 1), '+') || equals(takeLast(numero, 1), '*')) {
       disable();
-      var tmp$_2 = ensureNotNull(document.getElementById('output'));
-      var endIndex = numero.length - 1 | 0;
-      tmp$_2.innerHTML = numero.substring(0, endIndex);
-    } else if (equals(takeLast(numero, 2), '--')) {
+    } else if (equals(takeLast(numero, 2), '/-')) {
+      disable();
       disableMinus();
-      var tmp$_3 = ensureNotNull(document.getElementById('output'));
-      var endIndex_0 = numero.length - 1 | 0;
-      tmp$_3.innerHTML = numero.substring(0, endIndex_0);
+    } else if (equals(takeLast(numero, 2), '--')) {
+      disable();
+      disableMinus();
+      var tmp$_0 = ensureNotNull(document.getElementById('output'));
+      var endIndex = numero.length - 1 | 0;
+      tmp$_0.innerHTML = numero.substring(0, endIndex);
     } else {
       enable();
       enableMinus();
-      (tmp$_1 = document.getElementById('output')) != null ? (tmp$_1.innerHTML = numero + num) : null;
     }
+  }
+  function insert(num) {
+    var tmp$, tmp$_0;
+    var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
+    (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = numero + toString(num)) : null;
+    checkOp();
   }
   function calculate() {
     var tmp$, tmp$_0;
@@ -95,6 +100,7 @@ if (typeof kotlin === 'undefined') {
   }
   _.run = run;
   _.check = check;
+  _.checkOp = checkOp;
   _.insert = insert;
   _.calculate = calculate;
   _.back = back;

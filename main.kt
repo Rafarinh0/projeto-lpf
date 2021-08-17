@@ -10,26 +10,33 @@ fun check(){
   val num = document.getElementById("output")?.innerHTML;
   if(num?.length == 0){
     disable();
-  } else {
+  }else{
     enable();
+  }
+}
+
+fun checkOp(){
+  val numero = document.getElementById("output")?.innerHTML;
+  if(numero!!.takeLast(1).equals("/") || numero.takeLast(1).equals("+") || numero.takeLast(1).equals("*")){
+    disable();
+  }else if(numero.takeLast(2).equals("/-")){
+    disable();
+    disableMinus();
+  }else if(numero.takeLast(2).equals("--")){
+    disable();
+    disableMinus();
+    document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
+  }else{
+    enable();
+    enableMinus();
   }
 }
 
 @JsName("insert")
 fun insert(num: String?){
   val numero = document.getElementById("output")?.innerHTML;
-  document.getElementById("output")?.innerHTML = numero + num;  
-  if(numero!!.takeLast(2).equals("//") || numero.takeLast(3).equals("***") || numero.takeLast(2).equals("++") || numero.takeLast(2).equals("/*") || numero.takeLast(2).equals("*/") || numero.takeLast(2).equals("+/") || numero.takeLast(2).equals("/+") || numero.takeLast(2).equals("-/") || numero.takeLast(2).equals("-+")){
-    disable();
-    document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
-  }else if(numero.takeLast(2).equals("--")){
-    disableMinus();
-    document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
-  } else{
-    enable();
-    enableMinus();
-    document.getElementById("output")?.innerHTML = numero + num;
-  }
+  document.getElementById("output")?.innerHTML = numero + num;
+  checkOp();  
 }
 
 @JsName("calculate")
