@@ -4,6 +4,7 @@ import org.w3c.dom.*
 @JsName("run")
 fun run(){
   disable();
+  disableDecimal();
 }
 
 fun check(){
@@ -19,16 +20,19 @@ fun checkOp(){
   val numero = document.getElementById("output")?.innerHTML;
   if(numero!!.takeLast(1).equals("/") || numero.takeLast(1).equals("+") || numero.takeLast(1).equals("*")){
     disable();
-  }else if(numero.takeLast(2).equals("/-")){
+    disableDecimal();
+  }else if(numero.takeLast(1).equals("-")){
+    disable();
+    disableDecimal();
+    disableMinus();
+  }else if(numero.takeLast(2).equals("/-") || numero.takeLast(1).equals(".")){
     disable();
     disableMinus();
-  }else if(numero.takeLast(2).equals("--")){
-    disable();
-    disableMinus();
-    document.getElementById("output")!!.innerHTML = numero.substring(0, numero.length - 1)
+    disableDecimal();
   }else{
     enable();
     enableMinus();
+    enableDecimal();
   }
 }
 
@@ -52,7 +56,9 @@ fun calculate(){
       println("Entrada invalida!")
     }
   }
-  disable();
+  enable();
+  disableDecimal();
+  checkOp();
 }
 
 @JsName("back")
@@ -67,39 +73,43 @@ fun clear(){
   document.getElementById("output")!!.innerHTML = "";
   enableMinus();
   disable();
+  disableDecimal();
 }
 
 fun disable(){
   val btn1 = document.getElementById("btn1") as HTMLButtonElement
   btn1.disabled = true;
-   
   val btn2 = document.getElementById("btn2") as HTMLButtonElement
   btn2.disabled = true;
-   
   val btn4 = document.getElementById("btn4") as HTMLButtonElement
   btn4.disabled = true;
-
 }
 
 fun enable(){
   val btn1 = document.getElementById("btn1") as HTMLButtonElement
   btn1.disabled = false;
-
   val btn2 = document.getElementById("btn2") as HTMLButtonElement
   btn2.disabled = false;
-
   val btn4 = document.getElementById("btn4") as HTMLButtonElement
   btn4.disabled = false;
 }
 
 fun disableMinus(){
   val btn3 = document.getElementById("btn3") as HTMLButtonElement
-
   btn3.disabled = true;
 }
 
 fun enableMinus(){
   val btn3 = document.getElementById("btn3") as HTMLButtonElement
-
   btn3.disabled = false;
+}
+
+fun disableDecimal(){
+  val btn5 = document.getElementById("btn5") as HTMLButtonElement
+  btn5.disabled = true;
+}
+
+fun enableDecimal(){
+  val btn5 = document.getElementById("btn5") as HTMLButtonElement
+  btn5.disabled = false;
 }
