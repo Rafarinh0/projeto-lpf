@@ -6,8 +6,7 @@
 }
 
 body{
-  background-image: url("360_F_266347082_qnZLppWcnm5a4OA5cGNE1amPi01lpEmV.png");
-  background-repeat: no-repeat;
+  background-image: url("mathbackground.jpg");
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -17,8 +16,14 @@ body{
 
 .calculator{
   display: grid;
-    grid-template-columns: repeat(4, 80px);
-    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  background-color: rgb(20, 20, 20);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
 }
 
 .result{
@@ -34,8 +39,9 @@ body{
     color: #fff;
     font-size: 2rem;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 50px;
+    background-color: rgb(20, 20, 20);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 .btn{
@@ -228,3 +234,4 @@ transition: 0.2s background-color;
   color: #fff;
   transition: 0.2s background-color;
 }
+
