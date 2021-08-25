@@ -48,20 +48,28 @@ if (typeof kotlin === 'undefined') {
     checkOp();
   }
   function calculate() {
-    var tmp$, tmp$_0;
+    var tmp$, tmp$_0, tmp$_1, tmp$_2;
     var result = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
     if (result != null) {
-      try {
-        (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = eval(result)) : null;
-      } catch (err) {
-        enable();
-        enableMinus();
-        println('Entrada invalida!');
+      if (equals(result, 'NaN') || equals(result, 'Infinity')) {
+        (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = '') : null;
+        window.alert('Entrada inv\xE1lida!');
+      } else if (equals(result, 'undefined')) {
+        (tmp$_1 = document.getElementById('output')) != null ? (tmp$_1.innerHTML = '') : null;
+        window.alert('Digite uma opera\xE7\xE3o!');
+      } else {
+        try {
+          (tmp$_2 = document.getElementById('output')) != null ? (tmp$_2.innerHTML = eval(result)) : null;
+          enableMinus();
+          enable();
+          disableDecimal();
+          checkOp();
+        } catch (err) {
+          println('Entrada invalida!');
+          window.alert('Entrada inv\xE1lida!');
+        }
       }
-    }enable();
-    disableDecimal();
-    checkOp();
-  }
+    }}
   function back() {
     var result = ensureNotNull(document.getElementById('output')).innerHTML;
     var tmp$ = ensureNotNull(document.getElementById('output'));
