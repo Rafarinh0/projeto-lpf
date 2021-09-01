@@ -63,7 +63,7 @@ body{
   transition: 0.4s background-color;
 }
 
-.equal{
+#equal{
   outline: none;
   border: 3px solid #1a1919;
   user-select: none;
@@ -113,7 +113,7 @@ color: #000000;
 transition: 0.4s background-color;
 }
 
-.equal:hover{
+#equal:hover{
   background: rgb(253, 189, 69);
   color: #fff;
   transition: 0.4s background-color;
@@ -245,4 +245,3 @@ transition: 0.4s background-color;
   color: #fff;
   transition: 0.4s background-color;
 }
-

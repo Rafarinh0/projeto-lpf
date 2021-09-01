@@ -5,14 +5,17 @@ import org.w3c.dom.*
 fun run(){
   disable()
   disableDecimal()
+  disableEqual()
 }
 
 fun check(){
   val num = document.getElementById("output")?.innerHTML;
   if(num?.length == 0){
     disable()
+    disableEqual()
   }else{
     enable()
+    enableEqual()
   }
 }
 
@@ -40,6 +43,7 @@ fun checkOp(){
 fun insert(num: String?){
   val numero = document.getElementById("output")?.innerHTML
   document.getElementById("output")?.innerHTML = numero + num;
+  check()
   checkOp()
 }
 
@@ -49,13 +53,18 @@ fun calculate(){
   if(result != null){
     try{
       document.getElementById("output")?.innerHTML = eval(result)
+      if(result.takeLast(2).equals("/0")){
+        window.alert("Não é possível dividir por zero!")
+        clear()
+      }
       enableMinus()
-      enable()
-      disableDecimal()
       checkOp()
+      disableDecimal()
+      check()
     }
     catch(err: dynamic){
       window.alert("Erro: Entrada inválida!")
+      clear()
     }
   }
 }
@@ -71,7 +80,7 @@ fun back(){
 fun clear(){
   document.getElementById("output")!!.innerHTML = ""
   enableMinus()
-  disable()
+  check()
   disableDecimal()
 }
 
@@ -111,4 +120,14 @@ fun disableDecimal(){
 fun enableDecimal(){
   val btn5 = document.getElementById("btn5") as HTMLButtonElement
   btn5.disabled = false
+}
+
+fun disableEqual(){
+  val equal = document.getElementById("equal") as HTMLButtonElement
+  equal.disabled = true;
+}
+
+fun enableEqual(){
+  val equal = document.getElementById("equal") as HTMLButtonElement
+  equal.disabled = false;
 }

@@ -10,14 +10,17 @@ if (typeof kotlin === 'undefined') {
   function run() {
     disable();
     disableDecimal();
+    disableEqual();
   }
   function check() {
     var tmp$;
     var num = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
     if ((num != null ? num.length : null) === 0) {
       disable();
+      disableEqual();
     } else {
       enable();
+      enableEqual();
     }
   }
   function checkOp() {
@@ -44,6 +47,7 @@ if (typeof kotlin === 'undefined') {
     var tmp$, tmp$_0;
     var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
     (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = numero + toString(num)) : null;
+    check();
     checkOp();
   }
   function calculate() {
@@ -52,12 +56,16 @@ if (typeof kotlin === 'undefined') {
     if (result != null) {
       try {
         (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = eval(result)) : null;
-        enableMinus();
-        enable();
-        disableDecimal();
+        if (equals(takeLast(result, 2), '/0')) {
+          window.alert('N\xE3o \xE9 poss\xEDvel dividir por zero.');
+          clear();
+        }enableMinus();
         checkOp();
+        disableDecimal();
+        check();
       } catch (err) {
         window.alert('Erro: Entrada inv\xE1lida!');
+        clear();
       }
     }}
   function back() {
@@ -70,7 +78,7 @@ if (typeof kotlin === 'undefined') {
   function clear() {
     ensureNotNull(document.getElementById('output')).innerHTML = '';
     enableMinus();
-    disable();
+    check();
     disableDecimal();
   }
   function disable() {
@@ -111,6 +119,16 @@ if (typeof kotlin === 'undefined') {
     var btn5 = Kotlin.isType(tmp$ = document.getElementById('btn5'), HTMLButtonElement) ? tmp$ : throwCCE();
     btn5.disabled = false;
   }
+  function disableEqual() {
+    var tmp$;
+    var equal = Kotlin.isType(tmp$ = document.getElementById('equal'), HTMLButtonElement) ? tmp$ : throwCCE();
+    equal.disabled = true;
+  }
+  function enableEqual() {
+    var tmp$;
+    var equal = Kotlin.isType(tmp$ = document.getElementById('equal'), HTMLButtonElement) ? tmp$ : throwCCE();
+    equal.disabled = false;
+  }
   _.run = run;
   _.check = check;
   _.checkOp = checkOp;
@@ -124,6 +142,8 @@ if (typeof kotlin === 'undefined') {
   _.enableMinus = enableMinus;
   _.disableDecimal = disableDecimal;
   _.enableDecimal = enableDecimal;
+  _.disableEqual = disableEqual;
+  _.enableEqual = enableEqual;
   Kotlin.defineModule('main', _);
   return _;
 }(typeof main === 'undefined' ? {} : main, kotlin);
