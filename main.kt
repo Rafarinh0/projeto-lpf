@@ -59,7 +59,6 @@ fun calculate(){
       }
       enableMinus()
       checkOp()
-      disableDecimal()
       check()
     }
     catch(err: dynamic){

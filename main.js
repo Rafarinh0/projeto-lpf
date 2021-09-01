@@ -57,14 +57,13 @@ if (typeof kotlin === 'undefined') {
       try {
         (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = eval(result)) : null;
         if (equals(takeLast(result, 2), '/0')) {
-          window.alert('N\xE3o \xE9 poss\xEDvel dividir por zero.');
+          window.alert('N\xE3o \xE9 poss\xEDvel dividir por zero!');
           clear();
         }enableMinus();
         checkOp();
-        disableDecimal();
         check();
       } catch (err) {
-        window.alert('Erro: Entrada inv\xE1lida!');
+        window.alert('Erro: Entrada incompleta!');
         clear();
       }
     }}
