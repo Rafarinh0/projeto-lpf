@@ -73,6 +73,7 @@ fun back(){
   val result = document.getElementById("output")!!.innerHTML
   document.getElementById("output")!!.innerHTML = result.substring(0, result.length - 1)
   check()
+  checkOp()
 }
 
 @JsName("clear")
