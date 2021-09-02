@@ -20,6 +20,6 @@ php -S 0.0.0.0:8888
 ```
 
 ## Screenshots
-![](images/calculator-image-1)
-![](images/calculator-image-2)
-![](images/calculator-image-3)
+![](images/calculator-image-1.png)
+![](images/calculator-image-2.png)
+![](images/calculator-image-3.png)
