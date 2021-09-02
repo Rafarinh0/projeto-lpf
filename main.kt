@@ -9,12 +9,12 @@ fun run(){
 }
 
 fun check(){
-  val num = document.getElementById("output")?.innerHTML;
+  val num = document.getElementById("output")?.innerHTML
   if(num?.length == 0){
     disable()
     disableEqual()
+    disableDecimal()
   }else{
-    enable()
     enableEqual()
   }
 }
@@ -37,29 +37,27 @@ fun checkOp(){
     enableMinus()
     enableDecimal()
   }
+  check()
 }
 
 @JsName("insert")
 fun insert(num: String?){
   val numero = document.getElementById("output")?.innerHTML
-  document.getElementById("output")?.innerHTML = numero + num;
-  check()
+  document.getElementById("output")?.innerHTML = numero + num
   checkOp()
 }
 
 @JsName("calculate")
 fun calculate(){
-  val result = document.getElementById("output")?.innerHTML;
+  val result = document.getElementById("output")?.innerHTML
   if(result != null){
     try{
       document.getElementById("output")?.innerHTML = eval(result)
       if(result.takeLast(2).equals("/0")){
-        window.alert("Não é possível dividir por zero!")
+        window.alert("Não é possível dividir por zero.")
         clear()
       }
-      enableMinus()
       checkOp()
-      check()
     }
     catch(err: dynamic){
       window.alert("Erro: Entrada inválida!")
@@ -72,7 +70,6 @@ fun calculate(){
 fun back(){
   val result = document.getElementById("output")!!.innerHTML
   document.getElementById("output")!!.innerHTML = result.substring(0, result.length - 1)
-  check()
   checkOp()
 }
 
@@ -81,7 +78,6 @@ fun clear(){
   document.getElementById("output")!!.innerHTML = ""
   enableMinus()
   check()
-  disableDecimal()
 }
 
 fun disable(){

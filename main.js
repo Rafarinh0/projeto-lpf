@@ -18,8 +18,8 @@ if (typeof kotlin === 'undefined') {
     if ((num != null ? num.length : null) === 0) {
       disable();
       disableEqual();
+      disableDecimal();
     } else {
-      enable();
       enableEqual();
     }
   }
@@ -42,12 +42,12 @@ if (typeof kotlin === 'undefined') {
       enableMinus();
       enableDecimal();
     }
+    check();
   }
   function insert(num) {
     var tmp$, tmp$_0;
     var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
     (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = numero + toString(num)) : null;
-    check();
     checkOp();
   }
   function calculate() {
@@ -57,13 +57,11 @@ if (typeof kotlin === 'undefined') {
       try {
         (tmp$_0 = document.getElementById('output')) != null ? (tmp$_0.innerHTML = eval(result)) : null;
         if (equals(takeLast(result, 2), '/0')) {
-          window.alert('N\xE3o \xE9 poss\xEDvel dividir por zero!');
+          window.alert('N\xE3o \xE9 poss\xEDvel dividir por zero.');
           clear();
-        }enableMinus();
-        checkOp();
-        check();
+        }checkOp();
       } catch (err) {
-        window.alert('Erro: Entrada incompleta!');
+        window.alert('Erro: Entrada inv\xE1lida!');
         clear();
       }
     }}
@@ -72,13 +70,12 @@ if (typeof kotlin === 'undefined') {
     var tmp$ = ensureNotNull(document.getElementById('output'));
     var endIndex = result.length - 1 | 0;
     tmp$.innerHTML = result.substring(0, endIndex);
-    check();
+    checkOp();
   }
   function clear() {
     ensureNotNull(document.getElementById('output')).innerHTML = '';
     enableMinus();
     check();
-    disableDecimal();
   }
   function disable() {
     var tmp$, tmp$_0, tmp$_1;
