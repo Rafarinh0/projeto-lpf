@@ -1,25 +1,45 @@
 # Web Calculator
 
-Uma calculadora para operações básicas, escrita em Kotlin e compilada em Javascript. Projeto dos alunos Rafael Marinho e Vinicius Martins, para a disciplina de Linguagem de Programação Funcional, ministrada pelo Prof. Dr. Luis Carlos Menezes.
+Uma calculadora web para operações básicas, escrita em Kotlin e compilada em Javascript.
 
 ## Inicialização
-Primeiramente, instale o [SDK](https://kotlinlang.org/docs/command-line.html) do Kotlin no GitPod.
+:one: Primeiramente, acesse o projeto no [GitPod](gitpod.io/github.com/Rafarinh0/projeto-lpf)
+
+:two: No terminal do editor de texto, instale o [SDK](https://kotlinlang.org/docs/command-line.html) do Kotlin no GitPod.
 ```bash
 sdk install kotlin
 ```
 
-Em seguida, o comando abaixo deve ser executado no terminal. Isso deve ser repetido toda vez que o usuário alterar o arquivo .kt.
-
-```bash
-kotlinc-js main.kt -output main.js
-```
-
-Por fim, execute o servidor em qualquer porta disponível, e torne-a pública.
+:three: Por fim, execute o servidor em qualquer porta disponível, e torne-a pública.
 ```bash
 php -S 0.0.0.0:8888
 ```
+![](images/screenshots/server-port.jpg)
 
 ## Screenshots
-![](images/calculator-image-1.png)
-![](images/calculator-image-2.png)
-![](images/calculator-image-3.png)
+![](images/screenshots/calculator-image-1.png)
+![](images/screenshots/calculator-image-2.png)
+![](images/screenshots/calculator-image-3.png)
+
+
+# Desenvolvedores
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Rafarinh0">
+        <img src="images/students/rafael-marinho.jpg" width="100px;"/><br>
+        <sub>
+          <b>Rafael Marinho</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Vinizik">
+        <img src="images/students/vinicius-martins.jpg" width="100px;"/><br>
+        <sub>
+          <b>Vinicius Martins</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
