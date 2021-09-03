@@ -21,7 +21,7 @@ fun check(){
 
 fun checkOp(){
   val numero = document.getElementById("output")?.innerHTML
-  if(numero!!.takeLast(1).equals("/") || numero.takeLast(1).equals("+") || numero.takeLast(1).equals("*")){
+  if(numero!!.takeLast(1).equals("/") || numero.takeLast(1).equals("+") ||   numero.takeLast(1).equals("*")){
     disable()
     disableDecimal()
   }else if(numero.takeLast(1).equals("-") || numero.takeLast(1).equals(".")){
