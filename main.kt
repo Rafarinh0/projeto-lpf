@@ -24,14 +24,10 @@ fun checkOp(){
   if(numero!!.takeLast(1).equals("/") || numero.takeLast(1).equals("+") || numero.takeLast(1).equals("*")){
     disable()
     disableDecimal()
-  }else if(numero.takeLast(1).equals("-")){
+  }else if(numero.takeLast(1).equals("-") || numero.takeLast(1).equals(".")){
     disable()
     disableDecimal()
     disableMinus()
-  }else if(numero.takeLast(2).equals("/-") || numero.takeLast(1).equals(".")){
-    disable()
-    disableMinus()
-    disableDecimal()
   }else{
     enable()
     enableMinus()

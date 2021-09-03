@@ -29,14 +29,10 @@ if (typeof kotlin === 'undefined') {
     if (equals(takeLast(ensureNotNull(numero), 1), '/') || equals(takeLast(numero, 1), '+') || equals(takeLast(numero, 1), '*')) {
       disable();
       disableDecimal();
-    } else if (equals(takeLast(numero, 1), '-')) {
+    } else if (equals(takeLast(numero, 1), '-') || equals(takeLast(numero, 1), '.')) {
       disable();
       disableDecimal();
       disableMinus();
-    } else if (equals(takeLast(numero, 2), '/-') || equals(takeLast(numero, 1), '.')) {
-      disable();
-      disableMinus();
-      disableDecimal();
     } else {
       enable();
       enableMinus();
