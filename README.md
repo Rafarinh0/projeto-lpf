@@ -3,6 +3,8 @@
 Uma calculadora web para operações básicas, escrita em Kotlin e compilada em Javascript.
 
 ## Inicialização
+Você pode acessar através desse [link](https://rafarinh0.github.io/projeto-lpf/), ou seguindo o passo a passo a seguir:
+
 :one: Primeiramente, acesse o projeto no [GitPod](https://gitpod.io/github.com/Rafarinh0/projeto-lpf)
 
 :two: No terminal do editor de texto, instale o [SDK](https://kotlinlang.org/docs/command-line.html) do Kotlin no GitPod.
