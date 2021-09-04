@@ -1,37 +1,32 @@
 import kotlinx.browser.*
 import org.w3c.dom.*
 
-@JsName("run")
-fun run(){
-  disable()
-  disableDecimal()
-  disableEqual()
-}
-
+@JsName("check")
 fun check(){
-  val num = document.getElementById("output")?.innerHTML
-  if(num?.length == 0){
+  val numero = document.getElementById("output")?.innerHTML
+  if(numero?.length == 0){
     disable()
     disableEqual()
     disableDecimal()
-  }else{
-    enableEqual()
   }
 }
 
 fun checkOp(){
   val numero = document.getElementById("output")?.innerHTML
-  if(numero!!.takeLast(1).equals("/") || numero.takeLast(1).equals("+") ||   numero.takeLast(1).equals("*")){
+  if(numero!!.takeLast(1).equals("/") || numero.takeLast(1).equals("+") || numero.takeLast(1).equals("*")){
     disable()
     disableDecimal()
+    disableEqual()
   }else if(numero.takeLast(1).equals("-") || numero.takeLast(1).equals(".")){
     disable()
     disableDecimal()
     disableMinus()
+    disableEqual()
   }else{
     enable()
     enableMinus()
     enableDecimal()
+    enableEqual()
   }
   check()
 }
@@ -47,7 +42,7 @@ fun insert(num: String?){
 fun calculate(){
   val result = document.getElementById("output")?.innerHTML
   if(result != null){
-    try{
+    try{                
       document.getElementById("output")?.innerHTML = eval(result)
       if(result.takeLast(2).equals("/0")){
         window.alert("Não é possível dividir por zero.")
@@ -77,49 +72,49 @@ fun clear(){
 }
 
 fun disable(){
-  val btn1 = document.getElementById("btn1") as HTMLButtonElement
-  btn1.disabled = true
-  val btn2 = document.getElementById("btn2") as HTMLButtonElement
-  btn2.disabled = true
-  val btn4 = document.getElementById("btn4") as HTMLButtonElement
-  btn4.disabled = true
+  val btndiv = document.getElementById("btndiv") as HTMLButtonElement
+  btndiv.disabled = true
+  val btntimes = document.getElementById("btntimes") as HTMLButtonElement
+  btntimes.disabled = true
+  val btnsum = document.getElementById("btnsum") as HTMLButtonElement
+  btnsum.disabled = true
 }
 
 fun enable(){
-  val btn1 = document.getElementById("btn1") as HTMLButtonElement
-  btn1.disabled = false
-  val btn2 = document.getElementById("btn2") as HTMLButtonElement
-  btn2.disabled = false
-  val btn4 = document.getElementById("btn4") as HTMLButtonElement
-  btn4.disabled = false
+  val btndiv = document.getElementById("btndiv") as HTMLButtonElement
+  btndiv.disabled = false
+  val btntimes = document.getElementById("btntimes") as HTMLButtonElement
+  btntimes.disabled = false
+  val btnsum = document.getElementById("btnsum") as HTMLButtonElement
+  btnsum.disabled = false
 }
 
 fun disableMinus(){
-  val btn3 = document.getElementById("btn3") as HTMLButtonElement
-  btn3.disabled = true
+  val btnsub = document.getElementById("btnsub") as HTMLButtonElement
+  btnsub.disabled = true
 }
 
 fun enableMinus(){
-  val btn3 = document.getElementById("btn3") as HTMLButtonElement
-  btn3.disabled = false
+  val btnsub = document.getElementById("btnsub") as HTMLButtonElement
+  btnsub.disabled = false
 }
 
 fun disableDecimal(){
-  val btn5 = document.getElementById("btn5") as HTMLButtonElement
-  btn5.disabled = true
+  val btndecimal = document.getElementById("btndecimal") as HTMLButtonElement
+  btndecimal.disabled = true
 }
 
 fun enableDecimal(){
-  val btn5 = document.getElementById("btn5") as HTMLButtonElement
-  btn5.disabled = false
+  val btndecimal = document.getElementById("btndecimal") as HTMLButtonElement
+  btndecimal.disabled = false
 }
 
 fun disableEqual(){
   val equal = document.getElementById("equal") as HTMLButtonElement
-  equal.disabled = true;
+  equal.disabled = true
 }
 
 fun enableEqual(){
   val equal = document.getElementById("equal") as HTMLButtonElement
-  equal.disabled = false;
+  equal.disabled = false
 }

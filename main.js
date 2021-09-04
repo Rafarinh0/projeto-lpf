@@ -7,36 +7,31 @@ if (typeof kotlin === 'undefined') {
   var equals = Kotlin.equals;
   var toString = Kotlin.toString;
   var throwCCE = Kotlin.throwCCE;
-  function run() {
-    disable();
-    disableDecimal();
-    disableEqual();
-  }
   function check() {
     var tmp$;
-    var num = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
-    if ((num != null ? num.length : null) === 0) {
+    var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
+    if ((numero != null ? numero.length : null) === 0) {
       disable();
       disableEqual();
       disableDecimal();
-    } else {
-      enableEqual();
-    }
-  }
+    }}
   function checkOp() {
     var tmp$;
     var numero = (tmp$ = document.getElementById('output')) != null ? tmp$.innerHTML : null;
     if (equals(takeLast(ensureNotNull(numero), 1), '/') || equals(takeLast(numero, 1), '+') || equals(takeLast(numero, 1), '*')) {
       disable();
       disableDecimal();
+      disableEqual();
     } else if (equals(takeLast(numero, 1), '-') || equals(takeLast(numero, 1), '.')) {
       disable();
       disableDecimal();
       disableMinus();
+      disableEqual();
     } else {
       enable();
       enableMinus();
       enableDecimal();
+      enableEqual();
     }
     check();
   }
@@ -75,41 +70,41 @@ if (typeof kotlin === 'undefined') {
   }
   function disable() {
     var tmp$, tmp$_0, tmp$_1;
-    var btn1 = Kotlin.isType(tmp$ = document.getElementById('btn1'), HTMLButtonElement) ? tmp$ : throwCCE();
-    btn1.disabled = true;
-    var btn2 = Kotlin.isType(tmp$_0 = document.getElementById('btn2'), HTMLButtonElement) ? tmp$_0 : throwCCE();
-    btn2.disabled = true;
-    var btn4 = Kotlin.isType(tmp$_1 = document.getElementById('btn4'), HTMLButtonElement) ? tmp$_1 : throwCCE();
-    btn4.disabled = true;
+    var btndiv = Kotlin.isType(tmp$ = document.getElementById('btndiv'), HTMLButtonElement) ? tmp$ : throwCCE();
+    btndiv.disabled = true;
+    var btntimes = Kotlin.isType(tmp$_0 = document.getElementById('btntimes'), HTMLButtonElement) ? tmp$_0 : throwCCE();
+    btntimes.disabled = true;
+    var btnsum = Kotlin.isType(tmp$_1 = document.getElementById('btnsum'), HTMLButtonElement) ? tmp$_1 : throwCCE();
+    btnsum.disabled = true;
   }
   function enable() {
     var tmp$, tmp$_0, tmp$_1;
-    var btn1 = Kotlin.isType(tmp$ = document.getElementById('btn1'), HTMLButtonElement) ? tmp$ : throwCCE();
-    btn1.disabled = false;
-    var btn2 = Kotlin.isType(tmp$_0 = document.getElementById('btn2'), HTMLButtonElement) ? tmp$_0 : throwCCE();
-    btn2.disabled = false;
-    var btn4 = Kotlin.isType(tmp$_1 = document.getElementById('btn4'), HTMLButtonElement) ? tmp$_1 : throwCCE();
-    btn4.disabled = false;
+    var btndiv = Kotlin.isType(tmp$ = document.getElementById('btndiv'), HTMLButtonElement) ? tmp$ : throwCCE();
+    btndiv.disabled = false;
+    var btntimes = Kotlin.isType(tmp$_0 = document.getElementById('btntimes'), HTMLButtonElement) ? tmp$_0 : throwCCE();
+    btntimes.disabled = false;
+    var btnsum = Kotlin.isType(tmp$_1 = document.getElementById('btnsum'), HTMLButtonElement) ? tmp$_1 : throwCCE();
+    btnsum.disabled = false;
   }
   function disableMinus() {
     var tmp$;
-    var btn3 = Kotlin.isType(tmp$ = document.getElementById('btn3'), HTMLButtonElement) ? tmp$ : throwCCE();
-    btn3.disabled = true;
+    var btnsub = Kotlin.isType(tmp$ = document.getElementById('btnsub'), HTMLButtonElement) ? tmp$ : throwCCE();
+    btnsub.disabled = true;
   }
   function enableMinus() {
     var tmp$;
-    var btn3 = Kotlin.isType(tmp$ = document.getElementById('btn3'), HTMLButtonElement) ? tmp$ : throwCCE();
-    btn3.disabled = false;
+    var btnsub = Kotlin.isType(tmp$ = document.getElementById('btnsub'), HTMLButtonElement) ? tmp$ : throwCCE();
+    btnsub.disabled = false;
   }
   function disableDecimal() {
     var tmp$;
-    var btn5 = Kotlin.isType(tmp$ = document.getElementById('btn5'), HTMLButtonElement) ? tmp$ : throwCCE();
-    btn5.disabled = true;
+    var btndecimal = Kotlin.isType(tmp$ = document.getElementById('btndecimal'), HTMLButtonElement) ? tmp$ : throwCCE();
+    btndecimal.disabled = true;
   }
   function enableDecimal() {
     var tmp$;
-    var btn5 = Kotlin.isType(tmp$ = document.getElementById('btn5'), HTMLButtonElement) ? tmp$ : throwCCE();
-    btn5.disabled = false;
+    var btndecimal = Kotlin.isType(tmp$ = document.getElementById('btndecimal'), HTMLButtonElement) ? tmp$ : throwCCE();
+    btndecimal.disabled = false;
   }
   function disableEqual() {
     var tmp$;
@@ -121,7 +116,6 @@ if (typeof kotlin === 'undefined') {
     var equal = Kotlin.isType(tmp$ = document.getElementById('equal'), HTMLButtonElement) ? tmp$ : throwCCE();
     equal.disabled = false;
   }
-  _.run = run;
   _.check = check;
   _.checkOp = checkOp;
   _.insert = insert;
