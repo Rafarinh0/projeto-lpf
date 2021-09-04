@@ -136,7 +136,7 @@ transition: 0.4s background-color;
   transition: 0.4s background-color;
 }
 
-#btn1{
+#btndiv{
   outline: none;
   border: 3px solid #1a1919;
   user-select: none;
@@ -148,40 +148,40 @@ transition: 0.4s background-color;
   margin: 3px;
 }
 
-#operators > #btn1{
+#operators > #btndiv{
   background-color: orange;
   flex: 1
 }
 
-#operators > #btn1:hover{
+#operators > #btndiv:hover{
   background: #fff;
   color: orange;
   transition: 0.4s background-color;
 }
 
-#operators > #btn2 {
+#operators > #btntimes {
   background-color: orange;
   flex: 1
 }
 
-#operators > #btn2:hover{
+#operators > #btntimes:hover{
   background: #fff;
   color: orange;
   transition: 0.4s background-color;
 }
 
-#operators > #btn3{
+#operators > #btnsub{
   background-color: orange;
   flex: 1
 }
 
-#operators > #btn3:hover{
+#operators > #btnsub:hover{
   background: #fff;
   color: orange;
   transition: 0.4s background-color;
 }
 
-#btn2{
+#btntimes{
   outline: none;
   border: 3px solid #1a1919;
   user-select: none;
@@ -193,7 +193,7 @@ transition: 0.4s background-color;
   margin: 3px;
 }
 
-#btn3{
+#btnsub{
   outline: none;
   border: 3px solid #1a1919;
   user-select: none;
@@ -205,7 +205,7 @@ transition: 0.4s background-color;
   margin: 3px;
 }
 
-#btn4{
+#btnsum{
   outline: none;
   border: 3px solid #1a1919;
   user-select: none;
@@ -217,18 +217,18 @@ transition: 0.4s background-color;
   margin: 3px;
 }
 
-#operators > #btn4{
+#operators > #btnsum{
   background-color: orange;
   flex: 1
 }
 
-#operators > #btn4:hover{
+#operators > #btnsum:hover{
   background: #fff;
   color: orange;
   transition: 0.4s background-color;
 }
 
-#btn5{
+#btndecimal{
   outline: none;
   border: 3px solid #1a1919;
   user-select: none;
@@ -240,7 +240,7 @@ transition: 0.4s background-color;
   margin: 3px;
 }
 
-#btn5:hover{
+#btndecimal:hover{
   background:rgb(85, 85, 85);
   color: #fff;
   transition: 0.4s background-color;
