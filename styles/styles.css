@@ -90,12 +90,12 @@ body{
   justify-content: center;
 }
 
-.clear{
+.back{
   outline: none;
   border: 3px solid #1a1919;
   user-select: none;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.5rem;
   grid-area: 2/3/3/4;
   background: rgb(143, 142, 142);
   border-radius: 50px;
@@ -108,7 +108,7 @@ body{
   flex-direction: column;
 }
 
-.clear:hover{
+.back:hover{
 background: rgb(167, 167, 167);
 color: #000000;
 transition: 0.4s background-color;
