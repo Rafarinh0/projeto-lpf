@@ -19,9 +19,9 @@ php -S 0.0.0.0:8888
 ![](images/screenshots/server-port.jpg)
 
 ## Screenshots
-![](images/screenshots/calculator-image-1.png)
-![](images/screenshots/calculator-image-2.png)
-![](images/screenshots/calculator-image-3.png)
+![](images/screenshots/calculator-image-1.jpg)
+![](images/screenshots/calculator-image-2.jpg)
+![](images/screenshots/calculator-image-3.jpg)
 
 
 # Desenvolvedores
