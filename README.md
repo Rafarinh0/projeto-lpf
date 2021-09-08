@@ -5,7 +5,7 @@ Uma calculadora web para operações básicas, escrita em Kotlin e compilada em 
 ## Inicialização
 Você pode acessar através desse [link](https://rafarinh0.github.io/projeto-lpf/), ou seguindo o passo a passo a seguir:
 
-:one: Primeiramente, acesse o projeto no [GitPod](https://gitpod.io/github.com/Rafarinh0/projeto-lpf)
+:one: Primeiramente, acesse o projeto no [GitPod](https://gitpod.io#snapshot/e8953360-64b4-42e5-bcbf-5ea481f698c7)
 
 :two: No terminal do editor de texto, instale o [SDK](https://kotlinlang.org/docs/command-line.html) do Kotlin no GitPod.
 ```bash
